@@ -1,35 +1,54 @@
-# Discord Cache Viewer
+<p align="center">
+  <img src="assets/banner.svg" alt="Discord Cache Viewer" width="900"/>
+</p>
 
-Browse all images cached by Discord in a local, Discord-styled gallery UI.
+<p align="center">
+  A local gallery viewer for images cached by Discord on Windows.<br/>
+  Dark-themed, keyboard-friendly, and fully offline — no Discord API, no login.
+</p>
 
-## Requirements
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9+-5865f2?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Platform-Windows-0078d4?style=flat-square&logo=windows&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Dependencies-Zero-23a55a?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Repo-Private-ed4245?style=flat-square"/>
+</p>
 
-- Python 3.9+
-- Discord installed on Windows
+---
 
-## Usage
+## Quick start
 
 ```bat
+git clone https://github.com/jabreeflor/discord-cache-viewer
+cd discord-cache-viewer
 python server.py
 ```
 
-The app opens automatically at `http://localhost:8765`.
+Browser opens automatically at **http://localhost:8765**. Hit **Extract Cache** and your images load in seconds.
 
-1. Click **Extract Cache** — scans `%AppData%\discord\Cache\Cache_Data` and pulls out every image.
-2. Browse the gallery, filter by type (PNG / JPG / GIF / WebP), or search by filename.
-3. Click any image to open the lightbox — use arrow keys or the nav buttons to browse.
-4. Click **Download** in the lightbox to save an image.
+---
 
-Extracted images are saved to `extracted/` (git-ignored) and deduplicated by content hash.
+## Features
 
-## Supported Discord variants
+- **One-click extraction** — scans `%AppData%\discord\Cache\Cache_Data` and pulls out every JPEG, PNG, GIF, and WebP
+- **Content-hash deduplication** — re-running extraction is safe; no duplicate files ever written
+- **Filterable gallery** — filter by type (PNG / JPG / GIF / WebP) or search by filename
+- **Lightbox** — click any image to open full-size; navigate with `←` `→`, close with `Esc`
+- **Download button** — save any image directly from the lightbox
+- **Discord variants** — auto-detects stable, PTB, and Canary installs
 
-- Discord stable (`%AppData%\discord`)
-- Discord PTB (`%AppData%\discordptb`)
-- Discord Canary (`%AppData%\discordcanary`)
+---
+
+## How it works
+
+Discord (like all Chromium-based apps) caches remote resources in a binary block format with no file extensions. This tool scans those blocks for known image magic bytes — `FF D8 FF` (JPEG), `89 PNG` (PNG), `RIFF…WEBP` (WebP), `GIF8` (GIF) — extracts the image data starting at that offset, and saves it to `extracted/` using an MD5 content hash as the filename.
+
+The local HTTP server (`server.py`) serves the gallery UI and proxies the extracted images — nothing ever leaves your machine.
+
+---
 
 ## Notes
 
-- Only reads cache — never modifies Discord files.
-- Images are extracted from raw Chromium cache blocks using magic-byte detection; some incomplete cache entries may appear broken.
-- Re-running extraction is idempotent (duplicate files are skipped).
+- Read-only — Discord's cache files are never modified.
+- Some cache entries may be incomplete (partial downloads); those images will appear broken in the gallery.
+- `extracted/` is git-ignored and safe to delete at any time.
