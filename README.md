@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Python-3.9+-5865f2?style=flat-square&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Platform-Windows-0078d4?style=flat-square&logo=windows&logoColor=white"/>
   <img src="https://img.shields.io/badge/Dependencies-Zero-23a55a?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Repo-Private-ed4245?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Repo-Public-23a55a?style=flat-square"/>
 </p>
 
 ---

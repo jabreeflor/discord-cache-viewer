@@ -108,9 +108,9 @@
     <text x="362" y="139" fill="#b5bac1" text-anchor="middle"
           font-family="system-ui,sans-serif" font-size="11" font-weight="500">Zero deps</text>
 
-    <rect x="411" y="124" width="62" height="22" rx="11" fill="#5865f2"/>
+    <rect x="411" y="124" width="62" height="22" rx="11" fill="#23a55a"/>
     <text x="442" y="139" fill="#ffffff" text-anchor="middle"
-          font-family="system-ui,sans-serif" font-size="11" font-weight="600">Private</text>
+          font-family="system-ui,sans-serif" font-size="11" font-weight="600">Public</text>
   </g>
 
   <!-- Outer border drawn on top of clip -->
