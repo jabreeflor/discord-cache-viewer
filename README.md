@@ -12,7 +12,10 @@
   <img src="https://img.shields.io/badge/Platform-Windows-0078d4?style=flat-square&logo=windows&logoColor=white"/>
   <img src="https://img.shields.io/badge/Dependencies-Zero-23a55a?style=flat-square"/>
   <img src="https://img.shields.io/badge/Repo-Public-23a55a?style=flat-square"/>
+  <img src="https://img.shields.io/badge/⚠%EF%B8%8F%20Unofficial-Not%20affiliated%20with%20Discord-faa61a?style=flat-square"/>
 </p>
+
+> **Unofficial project.** Not affiliated with, endorsed by, or associated with Discord Inc. in any way. Discord and the Discord logo are trademarks of Discord Inc.
 
 ---
 
